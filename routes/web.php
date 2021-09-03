@@ -15,11 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Route::get('/login/okta', 'Auth\LoginController@redirectToProvider')->name('login-okta');
 Route::get('/authorization-code/callback', 'Auth\LoginController@handleProviderCallback');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth', 'namespace' => 'User'], function() {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/profile', 'ProfileController@index')->name('profile.index');
+
+    Route::resource('polls', 'PollController');
+});
+
 

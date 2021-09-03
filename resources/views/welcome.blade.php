@@ -1,94 +1,72 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>Smart Voto Web Platform</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}"/>
+    <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ asset('assets/js/loader.js') }}"></script>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
 
-        <title>Laravel</title>
+    <link href="{{ asset('assets/css/web.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+</head>
+<body class="web-page">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+<!-- BEGIN LOADER -->
+<div id="load_screen">
+    <div class="loader">
+        <div class="loader-content">
+            <div class="spinner-grow align-self-center"></div>
+        </div>
+    </div>
+</div>
+<!--  END LOADER -->
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+<header class="main-header">
+    <div class="container">
+        <a href="#" class="navbar-logo navbar-link">
+            <img src="{{ asset('assets/img/logo2.svg') }}" alt="logo">
+            <span class="navbar-brand-name">Smart Voto</span>
+        </a>
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login-okta') }}">Login</a>
-                    @endauth
+        @auth
+            <a href="{{ url('/dashboard') }}" class="navbar-link">Dashboard</a>
+        @else
+            <a href="{{ route('login-okta') }}" class="navbar-link">Login</a>
+        @endauth
+    </div>
+</header>
+<main>
+    <div class="home-hero">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h6 class="text-primary">100% Secure voting </h6>
+                    <h1 class="font-weight-bold hero-title">Try Online Voting with Smart Voto</h1>
+                    <p class="hero-subtitle">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
+                        for previewing layouts and visual mockups.</p>
+                    <a href="{{ route('login-okta') }}"
+                       class="btn btn-primary">Get Started</a>
                 </div>
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-6 col-lg-4 text-center">
+                    <img src="{{ asset('assets/img/web/ballot-box.png') }}" class="img-fluid hero-voting-icon">
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</main>
+
+<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+<script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
+<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- END GLOBAL MANDATORY SCRIPTS -->
+
+</body>
 </html>

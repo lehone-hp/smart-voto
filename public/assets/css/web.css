@@ -1,0 +1,63 @@
+.main-header {
+    padding: 1.5rem 0;
+    box-shadow: 0 0 5px;
+    background: #fff;
+}
+
+.main-header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .navbar-logo > img {
+    max-height: 2rem;
+}
+
+.main-header .navbar-link {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 18px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.navbar-brand-name {
+    display: none;
+}
+
+@media (min-width: 992px) {
+
+    .navbar-brand-name {
+        display: inline-block;
+    }
+
+    .main-header .navbar-link {
+        font-size: 20px;
+    }
+}
+
+main {
+    min-height: calc(100vh - 5rem - 1px);
+}
+
+.home-hero {
+    padding: 2rem 0;
+    min-height: calc(100vh - 5rem - 1px);
+    display: flex;
+    align-items: center;
+}
+
+.hero-voting-icon {
+    max-width: 18rem;
+}
+
+@media (min-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+}

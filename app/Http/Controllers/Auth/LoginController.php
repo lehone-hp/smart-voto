@@ -33,6 +33,10 @@ class LoginController extends Controller
 
     public function redirectToProvider()
     {
+        if (Auth::check()) {
+            return redirect()->route('dashboard');
+        }
+
         return Socialite::driver('okta')->redirect();
     }
 
@@ -43,7 +47,7 @@ class LoginController extends Controller
         $localUser = User::where('email', $user->email)->first();
 
         // create a local user with the email and token from Okta
-        if (! $localUser) {
+        if (!$localUser) {
             $localUser = User::create([
                 'email' => $user->email,
                 'name'  => $user->name,
@@ -61,7 +65,7 @@ class LoginController extends Controller
             return redirect('/login-okta');
         }
 
-        return redirect('/home');
+        return redirect()->route('dashboard');
     }
 
     public function logout()
