@@ -13,9 +13,15 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
+    <link href="{{ asset('plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/apps/contacts.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css"/>
+
     @yield('header-style')
 
     <link rel="stylesheet" href="{{ asset('plugins/font-icons/fontawesome/css/all.css') }}">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="alt-menu sidebar-noneoverflow">
@@ -64,6 +70,7 @@
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 
+<script src="{{ asset('assets/js/dashboard/dash_1.js') }}"></script>
 @yield('footer_script')
 
 </body>

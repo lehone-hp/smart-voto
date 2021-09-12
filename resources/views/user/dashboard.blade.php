@@ -1,7 +1,6 @@
 @extends('user.layouts.app')
 @section('header-style')
     <link href="{{ asset('plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css"/>
 @endsection
 
 @section('content')
@@ -1015,5 +1014,4 @@
 
 @section('footer_script')
     <script src="{{ asset('plugins/apex/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/js/dashboard/dash_1.js') }}"></script>
 @endsection

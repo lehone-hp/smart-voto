@@ -22,8 +22,8 @@ class CreatePollsTable extends Migration
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
             $table->integer('max_vote')->default(1);
-            $table->boolean('voter_reg');
-            $table->boolean('pub_result');
+            $table->boolean('voter_reg')->default(false);
+            $table->boolean('pub_result')->default(false);
             $table->timestamps();
         });
     }
