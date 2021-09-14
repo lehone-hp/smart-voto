@@ -19,7 +19,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('voter-list-component', require('./components/user/VoterListComponent').default);
+Vue.component('candidate-summary-component', require('./components/user/CandidateSummaryComponent').default);
+Vue.component('ballot-component', require('./components/BallotComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,5 +30,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#voto-app',
 });

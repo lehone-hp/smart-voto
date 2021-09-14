@@ -37,7 +37,7 @@
                                             <div class="col-xl-2 col-lg-12 col-md-4">
                                                 <div class="upload mt-4 pr-md-4">
                                                     <input type="file" id="input-file-max-fs" class="dropify"
-                                                           data-default-file="{{ asset('assets/img/user-profile.jpeg') }}"
+                                                           data-default-file="{{ asset('assets/img/avatar.png') }}"
                                                            data-max-file-size="2M"/>
                                                     <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload
                                                         Picture</p>
@@ -50,8 +50,9 @@
                                                             <div class="form-group">
                                                                 <label for="fullName">Full Name</label>
                                                                 <input type="text" class="form-control mb-4"
-                                                                       id="fullName" placeholder="Full Name"
-                                                                       value="Jimmy Turner">
+                                                                       id="fullName"
+                                                                       placeholder="Full Name"
+                                                                       value="">
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
@@ -158,9 +159,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="profession">Profession</label>
+                                                        <label for="profession">Email</label>
                                                         <input type="text" class="form-control mb-4" id="profession"
-                                                               placeholder="Designer" value="Web Developer">
+                                                               placeholder="" value="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,11 +180,10 @@
                                     <div class="col-md-11 mx-auto">
                                         <div class="form-group">
                                             <label for="aboutBio">Bio</label>
-                                            <textarea class="form-control" id="aboutBio"
-                                                      placeholder="Tell something interesting about yourself" rows="10">I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
-
-My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.</textarea>
-                                        </div>
+                                            <textarea class="form-control"
+                                                      rows="10"
+                                                      id="aboutBio"
+                                                      placeholder=""></textarea></div>
                                     </div>
                                 </div>
                             </div>

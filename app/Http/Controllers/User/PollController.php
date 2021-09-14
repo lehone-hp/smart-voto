@@ -6,15 +6,46 @@ use App\Candidate;
 use App\Http\Controllers\Controller;
 use App\Image;
 use App\Poll;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class PollController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('user.polls.index');
+        $search = [
+            'q' => $request->get('q'),
+            'status' => $request->get('status')
+        ];
+
+        $polls = new Poll();
+        if ($search['q']) {
+            $polls = $polls->where('name', 'like', '%'.$search['q'].'%');
+        }
+
+        if ($search['status']) {
+            switch ($search['status']) {
+                case 'On Going':
+                    $polls = $polls->where('start_date', '<=', Carbon::now())
+                        ->where('end_date', '>', Carbon::now());
+                    break;
+                case 'Not Started':
+                    $polls = $polls->where('start_date', '>', Carbon::now());
+                    break;
+                case 'Closed':
+                    $polls = $polls->where('end_date', '<=', Carbon::now());
+                    break;
+            }
+        }
+
+        $polls = $polls->where('user_id', Auth::id())
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+
+        $status_opts = ['On Going', 'Not Started', 'Closed'];
+        return view('user.polls.index', compact('polls', 'search', 'status_opts'));
     }
 
     public function create()
@@ -43,11 +74,13 @@ class PollController extends Controller
         if ($request->file('image')) {
             $image = new Image();
             $image->path = $request->file('image')->store('polls');
-            $poll->image()->save($image);
+            $image->imageable_id = $poll->id;
+            $image->imageable_type = Poll::class;
+            $image->save();
         }
 
         $c_names = collect($request->get('candidate_name'));
-        $c_bios = collect($request->get('candidate_name'));
+        $c_bios = collect($request->get('candidate_bio'));
         for ($i = 0; $i < count($c_names); $i++) {
             Candidate::create([
                 'poll_id'     => $poll->id,

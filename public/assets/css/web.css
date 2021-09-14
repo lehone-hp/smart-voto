@@ -61,3 +61,29 @@ main {
         font-size: 1.25rem;
     }
 }
+
+.p-candidate {
+    border: solid 3px transparent;
+    display: block;
+}
+
+.p-candidate.selected {
+    border: solid 3px #4361ee
+}
+
+.vote-success {
+    text-align: center;
+}
+
+.vote-success .check {
+    color: green;
+    font-size: 10rem;
+    margin-bottom: 1rem;
+}
+.widget-three .widget-content .w-icon {
+    padding: 3px;
+}
+
+.widget-three .widget-content .w-icon > img {
+    border-radius: 50%;
+}

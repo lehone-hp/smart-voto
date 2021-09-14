@@ -45,4 +45,19 @@ class Poll extends Model
 
         return null;
     }
+
+    public function getStatus()
+    {
+        if (Carbon::now() > $this->start_date && Carbon::now() < $this->end_date) {
+            return 'on_going';
+        }
+        if (Carbon::now() <= $this->start_date) {
+            return 'not_started';
+        }
+        if (Carbon::now() >= $this->start_date) {
+            return 'closed';
+        }
+
+        return null;
+    }
 }

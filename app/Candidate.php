@@ -11,4 +11,12 @@ class Candidate extends Model
     public function poll() {
         return $this->belongsTo(Poll::class);
     }
+
+    public function ballots() {
+        return $this->hasMany(Ballot::class);
+    }
+
+    public function profilePic() {
+        return asset('assets/img/avatar.png');
+    }
 }

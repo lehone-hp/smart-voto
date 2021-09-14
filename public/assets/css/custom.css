@@ -1,0 +1,7 @@
+.widget-three .widget-content .w-icon {
+    padding: 1px;
+}
+
+.widget-three .widget-content .w-icon > img {
+    border-radius: 50%;
+}

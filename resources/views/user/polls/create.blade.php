@@ -52,6 +52,7 @@
                                         <label>Name *</label>
                                         <input type="text"
                                                name="name"
+                                               autocomplete="off"
                                                value="{{ old('name') }}"
                                                class="form-control">
                                     </div>

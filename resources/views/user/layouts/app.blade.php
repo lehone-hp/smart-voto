@@ -26,37 +26,41 @@
 </head>
 <body class="alt-menu sidebar-noneoverflow">
 
-<div id="load_screen">
-    <div class="loader">
-        <div class="loader-content">
-            <div class="spinner-grow align-self-center"></div>
-        </div>
-    </div>
-</div>
-
-@include('user.layouts.header')
-
-<div class="main-container" id="container">
-
-    <div class="overlay"></div>
-    <div class="search-overlay"></div>
-
-    <div id="content" class="main-content">
-        <div class="layout-px-spacing">
-
-            @yield('content')
-
-        </div>
-
-        <div class="footer-wrapper">
-            <div class="footer-section f-section-1">
-                <p class="">Copyright © 2021, All rights reserved.</p>
+<div id="voto-app">
+    <div id="load_screen">
+        <div class="loader">
+            <div class="loader-content">
+                <div class="spinner-grow align-self-center"></div>
             </div>
         </div>
     </div>
 
+    @include('user.layouts.header')
+
+    <div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+
+                @yield('content')
+
+            </div>
+
+            <div class="footer-wrapper">
+                <div class="footer-section f-section-1">
+                    <p class="">Copyright © 2021, All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
